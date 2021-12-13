@@ -13,4 +13,8 @@ Now you can't change the parameters of the spirograph drawn on the webpage, but 
 
 ## Contributing
 
-Feel free to contribute via pull requests, or sending an email to make suggestions.
+Feel free to contribute via pull requests, or sending an email to make suggestions. 
+
+## TODO
+
+There is a TODO list at projects tab of the repository if you want to check it out.
