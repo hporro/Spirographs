@@ -17,15 +17,15 @@ window.onload = function() {
 	var canvas_back = document.getElementById("canvas_back"),
 		context_back = canvas_back.getContext("2d");
 
-	var angular_vel = 0.02,
+	var angular_vel = 0.04,
 		t1 = 0,
 		t2 = 0;
 
 	var C0 = {
 		center: vector.create(width/2,height/2),
-		radius: 400,
+		radius: 300,
 	};
-	var r = 128;
+	var r = 80;
 	var Ci = {
 		radius: r,
 		center: vector.create(width/2+C0.radius-r,height/2),
@@ -35,7 +35,7 @@ window.onload = function() {
 		color: "#7f00e0",
 	}
 	var B = {
-		dist_from_Ci_center: 70,
+		dist_from_Ci_center: 69,
 		pos: vector.create(0,0),
 		color: "#00e000",
 	}
@@ -50,7 +50,7 @@ window.onload = function() {
 
 	context_back.strokeStyle = 'grey';
 	context_back.beginPath();
-	context_back.arc(C0.center.getX(),C0.center.getY(),C0.radius-Ci.radius,0,Math.PI*2,false);
+	//context_back.arc(C0.center.getX(),C0.center.getY(),C0.radius-Ci.radius,0,Math.PI*2,false);
 	context_back.stroke();
 
 	render();
@@ -83,14 +83,6 @@ window.onload = function() {
 		context.moveTo(B.pos.getX(),B.pos.getY());
 		B.pos.setX(Ci.center.getX()+B.dist_from_Ci_center*Math.cos(t2));
 		B.pos.setY(Ci.center.getY()-B.dist_from_Ci_center*Math.sin(t2));
-		context.lineTo(B.pos.getX(),B.pos.getY());
-		context.stroke();
-
-		context.strokeStyle = B.color;
-		context.beginPath();
-		context.moveTo(B.pos.getX(),B.pos.getY());
-		B.pos.setX(Ci.center.getX()+(B.dist_from_Ci_center+10)*Math.cos(t2));
-		B.pos.setY(Ci.center.getY()-(B.dist_from_Ci_center+10)*Math.sin(t2));
 		context.lineTo(B.pos.getX(),B.pos.getY());
 		context.stroke();
 
